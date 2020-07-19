@@ -21,7 +21,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun login() {
-        val loginStatus = LoginStatus(email = binding.tvUsername.text.toString(), password = binding.tvPassword.text.toString())
+        val loginStatus = LoginStatus(email = binding.tvUsername.text.toString(),
+            password = binding.tvPassword.text.toString())
         val status = Login().loginUser(loginStatus)
         if (status.success) {
             Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show()
@@ -32,7 +33,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun openProfileActivity(loginStatus: LoginStatus) {
-        startActivity(Intent(this, ProfileActivity::class.java).putExtra("user", loginStatus))
+        startActivity(Intent(this,
+            ProfileActivity::class.java).putExtra("user", loginStatus))
     }
 
 }
