@@ -1,4 +1,4 @@
-package com.example.demo
+package com.example.demo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import com.example.demo.utils.Logger

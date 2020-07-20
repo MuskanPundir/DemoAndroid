@@ -1,7 +1,7 @@
 package com.example.demo
 
 import com.example.demo.repository.Login
-import com.example.demo.repository.LoginStatus
+import com.example.demo.model.LoginStatus
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -9,7 +9,8 @@ class LoginTest {
 
     @Test
     fun `check user is logging in with credential`() {
-        val loginStatus  = LoginStatus(email = "m", password = "12")
+        val loginStatus  =
+            LoginStatus(email = "m", password = "12")
         val status = Login().loginUser(loginStatus)
         assertEquals(status.email, loginStatus.email)
         assertEquals(status.password, loginStatus.password)
@@ -18,7 +19,8 @@ class LoginTest {
 
     @Test
     fun `check user is login failed`() {
-        val loginStatus  = LoginStatus(email = "m", password = "122")
+        val loginStatus  =
+            LoginStatus(email = "m", password = "122")
         val status = Login().loginUser(loginStatus)
         assertEquals(status.email, loginStatus.email)
         assertEquals(status.password, loginStatus.password)

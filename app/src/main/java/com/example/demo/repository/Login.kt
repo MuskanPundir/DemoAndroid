@@ -1,5 +1,7 @@
 package com.example.demo.repository
 
+import com.example.demo.model.LoginStatus
+
 class Login {
 
     fun loginUser(loginStatus: LoginStatus): LoginStatus {
