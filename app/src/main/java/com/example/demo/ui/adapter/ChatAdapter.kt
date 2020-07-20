@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.demo.R
 import com.example.demo.model.ChatModel
 
-class ChatAdapter(private val chatList: List<ChatModel>) : RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
+class ChatAdapter(private val chatList: List<ChatModel>) : RecyclerView.Adapter
+        <ChatAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-       val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat, parent, false)
+       val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chat, parent,
+           false)
        return ViewHolder(view)
     }
 

@@ -1,11 +1,11 @@
-package com.example.demo
+package com.example.demo.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import com.example.demo.databinding.ActivityMainBinding
 import com.example.demo.repository.Login
-import com.example.demo.repository.LoginStatus
+import com.example.demo.model.LoginStatus
 
 class MainActivity : BaseActivity() {
 
@@ -21,8 +21,10 @@ class MainActivity : BaseActivity() {
     }
 
     private fun login() {
-        val loginStatus = LoginStatus(email = binding.tvUsername.text.toString(),
-            password = binding.tvPassword.text.toString())
+        val loginStatus = LoginStatus(
+            email = binding.tvUsername.text.toString(),
+            password = binding.tvPassword.text.toString()
+        )
         val status = Login().loginUser(loginStatus)
         if (status.success) {
             Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show()
