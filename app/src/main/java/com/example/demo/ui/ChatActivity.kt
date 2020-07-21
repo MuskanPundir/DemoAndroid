@@ -1,13 +1,14 @@
 package com.example.demo.ui
 
 import android.os.Bundle
+import com.example.demo.MovieAdapter
 import com.example.demo.databinding.ActivityChatBinding
 import com.example.demo.repository.ChatRepo
-import com.example.demo.ui.adapter.ChatAdapter
+import com.example.demo.repository.MovieRepo
 
 class ChatActivity : BaseActivity() {
     private lateinit var binding: ActivityChatBinding
-    private lateinit var chatAdapter: ChatAdapter
+    private lateinit var movieAdapter: MovieAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +18,7 @@ class ChatActivity : BaseActivity() {
     }
 
     private fun setRecyclerView() {
-        chatAdapter = ChatAdapter(ChatRepo().prepareData())
-        binding.recyclerViewChat.adapter = chatAdapter
+        movieAdapter = MovieAdapter(MovieRepo().prepareMovieData())
+        binding.recyclerViewChat.adapter = movieAdapter
     }
 }
