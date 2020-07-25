@@ -21,4 +21,5 @@ class ChatActivity : BaseActivity() {
         movieAdapter = MovieAdapter(MovieRepo().prepareMovieData())
         binding.recyclerViewChat.adapter = movieAdapter
     }
+
 }
