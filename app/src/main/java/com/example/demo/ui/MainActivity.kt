@@ -20,6 +20,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
+
     private fun login() {
         val loginStatus = LoginStatus(
             email = binding.tvUsername.text.toString(),
