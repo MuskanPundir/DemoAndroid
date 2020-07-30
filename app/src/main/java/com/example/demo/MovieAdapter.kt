@@ -12,6 +12,7 @@ import com.example.demo.model.MovieModel.MovieModel
 
 class MovieAdapter(private val movieList: List<MovieModel>, private val context: Context):
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cards_layout,parent ,
             false)

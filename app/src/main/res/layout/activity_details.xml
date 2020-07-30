@@ -31,16 +31,7 @@
         android:textSize="14sp"
         android:gravity= "center" />
 
-        <TextView
-            android:id="@+id/tvdescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:text="Description"
-            android:textSize="14sp"
-            android:gravity= "center" />
+       
 
         <TextView
             android:id="@+id/tvrating"
