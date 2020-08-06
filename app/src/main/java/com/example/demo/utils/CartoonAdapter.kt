@@ -40,7 +40,6 @@ class CartoonAdapter(private val cartoonList: List<CartoonModel> , private val c
                     .putExtra("image", cartoonList[position].image)
             )
         }
-        println("Moviename ${cartoonList[position].name}")
     }
 
      class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
