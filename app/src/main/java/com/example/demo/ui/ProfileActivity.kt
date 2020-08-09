@@ -1,20 +1,21 @@
 package com.example.demo.ui
 
-import MovieDetail
+import MovieResult
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.demo.MovieDetailsActivity
+import com.example.demo.MovieViewModel
 import com.example.demo.databinding.ActivityProfileBinding
-import com.example.demo.datasource.Api
-import com.example.demo.datasource.RetrofitService
-import com.example.demo.repository.MovieRepo
+import com.example.demo.utils.CartoonAdapter
 import com.squareup.picasso.Picasso
 
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding
+    private lateinit var movieViewModel: MovieViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +29,15 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun loadImage() {
-        val movieRepo = MovieRepo()
-        movieRepo.getPopularMovies().observe(this, Observer {
-            println(it.results?.get(0)?.title)
-            val fullImage = "https://image.tmdb.org/t/p/w500/${it.results
-                ?.get(0)?.posterPath}"
-            Picasso.get().load(fullImage).into(binding.img)
+        movieViewModel = ViewModelProviders.of(this).get(MovieViewModel::class.java)
+        movieViewModel.movieDetail.observe(this, Observer {
+            setRecyclerView(it.results)
         })
+    }
+
+    private fun setRecyclerView(list : List<MovieResult>?) {
+       val cartoonAdapter = CartoonAdapter(list!!, this)
+        binding.recyclerViewChat.setItemViewCacheSize(100)
+      binding.recyclerViewChat.adapter = cartoonAdapter
     }
 }

@@ -13,10 +13,10 @@ data class MovieDetail(
     var totalPages: Int? = null,
     @SerializedName("results")
     @Expose
-    var results: List<Result>? = null
+    var results: List<MovieResult>? = null
 )
 
-data class Result(
+data class MovieResult(
     @SerializedName("popularity")
     @Expose
     var popularity: Double? = null,
