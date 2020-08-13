@@ -41,9 +41,29 @@
             android:layout_height="wrap_content"
             android:text="rating"
             android:textColor="@color/colorPrimaryDark"
-            android:paddingLeft="20dp"
+            android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:gravity="left" />
+
+        <TextView
+            android:id="@+id/cartoon_popularity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rating"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:gravity="left" />
+        <TextView
+            android:id="@+id/cartoon_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rating"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:gravity="left" />
+
 
 
     </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.demo.utils
 
 import MovieResult
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,7 @@ class CartoonAdapter(private val cartoonList: List<MovieResult> , private val co
         return cartoonList.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: CartoonAdapter.ViewHolder, position: Int) {
         val fullImage = "https://image.tmdb.org/t/p/w500/${cartoonList[position]
             .posterPath}"
@@ -44,9 +46,10 @@ class CartoonAdapter(private val cartoonList: List<MovieResult> , private val co
                 }
             })
 
-        holder.name.setText(cartoonList[position].title)
-        holder.rating.setText(cartoonList[position].voteAverage.toString())
-
+        holder.name.text ="Name: "+(cartoonList[position].title)
+        holder.rating.text ="Rating: "+(cartoonList[position].voteAverage.toString())
+        holder.popularity.text = "Popularity:  "+cartoonList[position].popularity.toString()
+        holder.id.text = "id: "+cartoonList[position].id.toString()
 //        holder.itemView.setOnClickListener {
 //            context.startActivity(
 //                Intent(context, DetailsActivity::class.java).putExtra(
@@ -62,5 +65,8 @@ class CartoonAdapter(private val cartoonList: List<MovieResult> , private val co
         val image = itemView.findViewById<ImageView>(R.id.imageView)
         val name = itemView.findViewById<TextView>(R.id.cartoon_name)
         val rating = itemView.findViewById<TextView>(R.id.cartoon_rating)
-    }
+         val popularity = itemView.findViewById<TextView>(R.id.cartoon_popularity)
+         val id = itemView.findViewById<TextView>(R.id.cartoon_id)
+
+     }
 }
